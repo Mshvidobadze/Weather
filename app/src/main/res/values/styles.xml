@@ -1,0 +1,8 @@
+<resources>
+
+    <style name="ThemeSpinner">
+        <item name="colorAccent">@color/white</item>
+        <item name="colorControlNormal">@color/white</item>
+    </style>
+
+</resources>

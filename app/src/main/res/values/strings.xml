@@ -1,0 +1,45 @@
+<resources>
+
+    <string name="app_name">Weather</string>
+    <string name="base_url">https://weather.aw.ee/api/</string>
+
+    <string name="date">date</string>
+    <string name="date_">Date:</string>
+    <string name="error_text">Error</string>
+
+    <string name="select_city">Select city</string>
+    <string name="today">Today</string>
+
+    <string name="name">Name:</string>
+    <string name="wmocode">Wmo code:</string>
+    <string name="longitude">Longitude:</string>
+    <string name="latitude">Latitude:</string>
+    <string name="phenomenon">Phenomenon:</string>
+    <string name="visibility">Visibility:</string>
+    <string name="precipitations">Precipitations:</string>
+    <string name="airpressure">Air pressure:</string>
+    <string name="relativehumidity">Relative humidity:</string>
+    <string name="airtemperature">Air temperature:</string>
+    <string name="winddirection">Wind direction:</string>
+    <string name="windspeed">Wind speed:</string>
+    <string name="windspeedmax">Wind speed max:</string>
+    <string name="waterlevel">Water level:</string>
+    <string name="waterlevel_eh2000">Water level eh2000:</string>
+    <string name="watertemperature">Water temperature:</string>
+    <string name="uvindex">Uv index:</string>
+
+    <string name="temperature_example">20°</string>
+
+    <string name="day">Day</string>
+    <string name="night">Night</string>
+
+    <string name="tempmin">Temp min:</string>
+    <string name="tempmax">Temp max:</string>
+    <string name="text">Text:</string>
+    <string name="sea">Sea:</string>
+    <string name="peipsi">Peipsi:</string>
+    <string name="places">Places:</string>
+    <string name="winds">Winds:</string>
+
+    <string name="celsius">%s celsius</string>
+</resources>

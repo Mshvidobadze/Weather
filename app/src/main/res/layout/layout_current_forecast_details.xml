@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="@dimen/container_medium_padding"
+    android:background="@color/background_color">
+
+    <Spinner
+        android:id="@+id/spinnerCityOptions"
+        style="@style/Base.Widget.AppCompat.Spinner.Underlined"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/spinner_height"
+        android:background="@drawable/spinner_selector"
+        android:theme="@style/ThemeSpinner"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <ScrollView
+        android:id="@+id/svCurrentForecasts"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/spinnerCityOptions"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/container_large_padding">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clCurrentForecastDetails"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+
+                <TextView
+                    android:id="@+id/tvNameTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/name"
+                    android:textSize="@dimen/small_text_size"
+                    android:textColor="@color/white"
+                    app:layout_constraintBaseline_toBaselineOf="@id/tvName"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/small_text_size"
+                    android:layout_marginTop="@dimen/field_separator_small_margin"
+                    android:layout_marginStart="@dimen/field_separator_margin"
+                    android:textColor="@color/white"
+                    app:layout_constraintStart_toEndOf="@+id/tvNameTitle"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvWmocodeTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/wmocode"
+                    android:textSize="@dimen/small_text_size"
+                    android:textColor="@color/white"
+                    app:layout_constraintBaseline_toBaselineOf="@id/tvWmocode"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvWmocode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/small_text_size"
+                    android:layout_marginTop="@dimen/field_separator_small_margin"
+                    android:layout_marginStart="@dimen/field_separator_margin"
+                    android:textColor="@color/white"
+                    app:layout_constraintStart_toEndOf="@+id/tvWmocodeTitle"
+                    app:layout_constraintTop_toBottomOf="@+id/tvName" />
+
+                <TextView
+                    android:id="@+id/tvLongitudeTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/longitude"
+                    android:textSize="@dimen/small_text_size"
+                    android:textColor="@color/white"
+                    app:layout_constraintBaseline_toBaselineOf="@id/tvLongitude"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvLongitude"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/small_text_size"
+                    android:layout_marginTop="@dimen/field_separator_small_margin"
+                    android:layout_marginStart="@dimen/field_separator_margin"
+                    android:textColor="@color/white"
+                    app:layout_constraintStart_toEndOf="@+id/tvLongitudeTitle"
+                    app:layout_constraintTop_toBottomOf="@+id/tvWmocode" />
+
+                <TextView
+                    android:id="@+id/tvLatitudeTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/latitude"
+                    android:textSize="@dimen/small_text_size"
+                    android:textColor="@color/white"
+                    app:layout_constraintBaseline_toBaselineOf="@id/tvLatitude"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvLatitude"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/small_text_size"
+                    android:layout_marginTop="@dimen/field_separator_small_margin"
+                    android:layout_marginStart="@dimen/field_separator_margin"
+                    android:textColor="@color/white"
+                    app:layout_constraintStart_toEndOf="@+id/tvLatitudeTitle"
+                    app:layout_constraintTop_toBottomOf="@+id/tvLongitude" />
+
+                <TextView
+                    android:id="@+id/tvPhenomenonTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/phenomenon"
+                    android:textSize="@dimen/small_text_size"
+                    android:textColor="@color/white"
+                    app:layout_constraintBaseline_toBaselineOf="@id/tvPhenomenon"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvPhenomenon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/small_text_size"
+                    android:textColor="@color/white"
+                    android:layout_marginTop="@dimen/field_separator_small_margin"
+                    android:layout_marginStart="@dimen/field_separator_margin"
+                    app:layout_constraintStart_toEndOf="@+id/tvPhenomenonTitle"
+                    app:layout_constraintTop_toBottomOf="@+id/tvLatitude" />
+
+                <TextView
+                    android:id="@+id/tvVisibilityTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/visibility"
+                    android:textSize="@dimen/small_text_size"
+                    android:textColor="@color/white"
+                    app:layout_constraintBaseline_toBaselineOf="@id/tvVisibility"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvVisibility"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/small_text_size"
+                    android:textColor="@color/white"
+                    android:layout_marginTop="@dimen/field_separator_small_margin"
+                    android:layout_marginStart="@dimen/field_separator_margin"
+                    app:layout_constraintStart_toEndOf="@+id/tvVisibilityTitle"
+                    app:layout_constraintTop_toBottomOf="@+id/tvPhenomenon" />
+
+                <TextView
+                    android:id="@+id/tvPrecipitationsTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/precipitations"
+                    android:textSize="@dimen/small_text_size"
+                    android:textColor="@color/white"
+                    app:layout_constraintBaseline_toBaselineOf="@id/tvPrecipitations"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvPrecipitations"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/small_text_size"
+                    android:textColor="@color/white"
+                    android:layout_marginTop="@dimen/field_separator_small_margin"
+                    android:layout_marginStart="@dimen/field_separator_margin"
+                    app:layout_constraintStart_toEndOf="@+id/tvPrecipitationsTitle"
+                    app:layout_constraintTop_toBottomOf="@+id/tvVisibility" />
+
+                <TextView
+                    android:id="@+id/tvAirPressureTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/airpressure"
+                    android:textSize="@dimen/small_text_size"
+                    android:textColor="@color/white"
+                    app:layout_constraintBaseline_toBaselineOf="@id/tvAirPressure"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvAirPressure"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/small_text_size"
+                    android:textColor="@color/white"
+                    android:layout_marginTop="@dimen/field_separator_small_margin"
+                    android:layout_marginStart="@dimen/field_separator_margin"
+                    app:layout_constraintStart_toEndOf="@+id/tvAirPressureTitle"
+                    app:layout_constraintTop_toBottomOf="@+id/tvPrecipitations" />
+
+                <TextView
+                    android:id="@+id/tvRelativeHumidityTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/relativehumidity"
+                    android:textSize="@dimen/small_text_size"
+                    android:textColor="@color/white"
+                    app:layout_constraintBaseline_toBaselineOf="@id/tvRelativeHumidity"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvRelativeHumidity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/small_text_size"
+                    android:textColor="@color/white"
+                    android:layout_marginTop="@dimen/field_separator_small_margin"
+                    android:layout_marginStart="@dimen/field_separator_margin"
+                    app:layout_constraintStart_toEndOf="@+id/tvRelativeHumidityTitle"
+                    app:layout_constraintTop_toBottomOf="@+id/tvAirPressure" />
+
+                <TextView
+                    android:id="@+id/tvAirTemperatureTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/airtemperature"
+                    android:textSize="@dimen/small_text_size"
+                    android:textColor="@color/white"
+                    app:layout_constraintBaseline_toBaselineOf="@id/tvAirTemperature"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvAirTemperature"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/small_text_size"
+                    android:textColor="@color/white"
+                    android:layout_marginTop="@dimen/field_separator_small_margin"
+                    android:layout_marginStart="@dimen/field_separator_margin"
+                    app:layout_constraintStart_toEndOf="@+id/tvAirTemperatureTitle"
+                    app:layout_constraintTop_toBottomOf="@+id/tvRelativeHumidity" />
+
+                <TextView
+                    android:id="@+id/tvWindDirectionTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/winddirection"
+                    android:textSize="@dimen/small_text_size"
+                    android:textColor="@color/white"
+                    app:layout_constraintBaseline_toBaselineOf="@id/tvWindDirection"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvWindDirection"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/small_text_size"
+                    android:textColor="@color/white"
+                    android:layout_marginTop="@dimen/field_separator_small_margin"
+                    android:layout_marginStart="@dimen/field_separator_margin"
+                    app:layout_constraintStart_toEndOf="@+id/tvWindDirectionTitle"
+                    app:layout_constraintTop_toBottomOf="@+id/tvAirTemperature" />
+
+                <TextView
+                    android:id="@+id/tvWindSpeedTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/windspeed"
+                    android:textSize="@dimen/small_text_size"
+                    android:textColor="@color/white"
+                    app:layout_constraintBaseline_toBaselineOf="@id/tvWindSpeed"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvWindSpeed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/small_text_size"
+                    android:textColor="@color/white"
+                    android:layout_marginTop="@dimen/field_separator_small_margin"
+                    android:layout_marginStart="@dimen/field_separator_margin"
+                    app:layout_constraintStart_toEndOf="@+id/tvWindSpeedTitle"
+                    app:layout_constraintTop_toBottomOf="@+id/tvWindDirection" />
+
+                <TextView
+                    android:id="@+id/tvWindSpeedMaxTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/windspeedmax"
+                    android:textSize="@dimen/small_text_size"
+                    android:textColor="@color/white"
+                    app:layout_constraintBaseline_toBaselineOf="@id/tvWindSpeedMax"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvWindSpeedMax"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/small_text_size"
+                    android:textColor="@color/white"
+                    android:layout_marginTop="@dimen/field_separator_small_margin"
+                    android:layout_marginStart="@dimen/field_separator_margin"
+                    app:layout_constraintStart_toEndOf="@+id/tvWindSpeedMaxTitle"
+                    app:layout_constraintTop_toBottomOf="@+id/tvWindSpeed" />
+
+                <TextView
+                    android:id="@+id/tvWaterLevelTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/waterlevel"
+                    android:textSize="@dimen/small_text_size"
+                    android:textColor="@color/white"
+                    app:layout_constraintBaseline_toBaselineOf="@id/tvWaterLevel"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvWaterLevel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/small_text_size"
+                    android:textColor="@color/white"
+                    android:layout_marginTop="@dimen/field_separator_small_margin"
+                    android:layout_marginStart="@dimen/field_separator_margin"
+                    app:layout_constraintStart_toEndOf="@+id/tvWaterLevelTitle"
+                    app:layout_constraintTop_toBottomOf="@+id/tvWindSpeedMax" />
+
+                <TextView
+                    android:id="@+id/tvWaterLevelEHTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/waterlevel_eh2000"
+                    android:textSize="@dimen/small_text_size"
+                    android:textColor="@color/white"
+                    app:layout_constraintBaseline_toBaselineOf="@id/tvWaterLevelEH"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvWaterLevelEH"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/small_text_size"
+                    android:textColor="@color/white"
+                    android:layout_marginTop="@dimen/field_separator_small_margin"
+                    android:layout_marginStart="@dimen/field_separator_margin"
+                    app:layout_constraintStart_toEndOf="@+id/tvWaterLevelEHTitle"
+                    app:layout_constraintTop_toBottomOf="@+id/tvWaterLevel" />
+
+                <TextView
+                    android:id="@+id/tvWaterTemperatureTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/watertemperature"
+                    android:textSize="@dimen/small_text_size"
+                    android:textColor="@color/white"
+                    app:layout_constraintBaseline_toBaselineOf="@id/tvWaterTemperature"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvWaterTemperature"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/small_text_size"
+                    android:textColor="@color/white"
+                    android:layout_marginTop="@dimen/field_separator_small_margin"
+                    android:layout_marginStart="@dimen/field_separator_margin"
+                    app:layout_constraintStart_toEndOf="@+id/tvWaterTemperatureTitle"
+                    app:layout_constraintTop_toBottomOf="@+id/tvWaterLevelEH" />
+
+                <TextView
+                    android:id="@+id/tvUvIndexTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/uvindex"
+                    android:textSize="@dimen/small_text_size"
+                    android:textColor="@color/white"
+                    app:layout_constraintBaseline_toBaselineOf="@id/tvUvIndex"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvUvIndex"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/small_text_size"
+                    android:textColor="@color/white"
+                    android:layout_marginTop="@dimen/field_separator_small_margin"
+                    android:layout_marginStart="@dimen/field_separator_margin"
+                    app:layout_constraintStart_toEndOf="@+id/tvUvIndexTitle"
+                    app:layout_constraintTop_toBottomOf="@+id/tvWaterTemperature" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

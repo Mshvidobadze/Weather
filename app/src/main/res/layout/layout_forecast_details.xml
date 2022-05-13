@@ -1,0 +1,420 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/background_color"
+    android:padding="@dimen/container_medium_padding">
+
+    <ScrollView
+        android:id="@+id/svForecasts"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/container_large_padding">
+
+            <TextView
+                android:id="@+id/tvDayTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/day"
+                android:textSize="@dimen/standard_text_size"
+                android:textColor="@color/white"
+                android:visibility="gone"/>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clForecastDetails"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/tvDayPhenomenonTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/phenomenon"
+                    android:textSize="@dimen/xsmall_text_size"
+                    android:textColor="@color/white"
+                    app:layout_constraintBaseline_toBaselineOf="@id/tvDayPhenomenon"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvDayPhenomenon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/xsmall_text_size"
+                    android:layout_marginTop="@dimen/field_separator_small_margin"
+                    android:layout_marginStart="@dimen/field_separator_margin"
+                    android:textColor="@color/white"
+                    app:layout_constraintStart_toEndOf="@+id/tvDayPhenomenonTitle"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvTempMinDayTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tempmin"
+                    android:textSize="@dimen/xsmall_text_size"
+                    android:textColor="@color/white"
+                    app:layout_constraintBaseline_toBaselineOf="@id/tvTempMinDay"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvTempMinDay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/xsmall_text_size"
+                    android:layout_marginTop="@dimen/field_separator_small_margin"
+                    android:layout_marginStart="@dimen/field_separator_margin"
+                    android:textColor="@color/white"
+                    app:layout_constraintStart_toEndOf="@+id/tvTempMinDayTitle"
+                    app:layout_constraintTop_toBottomOf="@+id/tvDayPhenomenon" />
+
+                <TextView
+                    android:id="@+id/tvTempMaxDayTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tempmax"
+                    android:textSize="@dimen/xsmall_text_size"
+                    android:textColor="@color/white"
+                    app:layout_constraintBaseline_toBaselineOf="@id/tvTempMaxDay"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvTempMaxDay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/xsmall_text_size"
+                    android:layout_marginTop="@dimen/field_separator_small_margin"
+                    android:layout_marginStart="@dimen/field_separator_margin"
+                    android:textColor="@color/white"
+                    app:layout_constraintStart_toEndOf="@+id/tvTempMaxDayTitle"
+                    app:layout_constraintTop_toBottomOf="@+id/tvTempMinDay" />
+
+                <TextView
+                    android:id="@+id/tvTextDayTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/text"
+                    android:textSize="@dimen/xsmall_text_size"
+                    android:textColor="@color/white"
+                    android:paddingEnd="@dimen/container_padding"
+                    app:layout_constraintBaseline_toBaselineOf="@id/tvTextDay"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvTextDay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/xsmall_text_size"
+                    android:layout_marginTop="@dimen/field_separator_small_margin"
+                    android:layout_marginStart="@dimen/field_separator_margin"
+                    android:paddingStart="@dimen/container_medium_padding"
+                    android:paddingEnd="@dimen/container_medium_padding"
+                    android:textColor="@color/white"
+                    android:gravity="start"
+                    app:layout_constraintStart_toEndOf="@+id/tvTextDayTitle"
+                    app:layout_constraintTop_toBottomOf="@+id/tvTempMaxDay"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+                <TextView
+                    android:id="@+id/tvSeaDayTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/sea"
+                    android:textSize="@dimen/xsmall_text_size"
+                    android:textColor="@color/white"
+                    android:paddingEnd="@dimen/container_padding"
+                    app:layout_constraintBaseline_toBaselineOf="@id/tvSeaDay"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvSeaDay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/xsmall_text_size"
+                    android:layout_marginTop="@dimen/field_separator_small_margin"
+                    android:layout_marginStart="@dimen/field_separator_margin"
+                    android:paddingStart="@dimen/container_medium_padding"
+                    android:paddingEnd="@dimen/container_medium_padding"
+                    android:textColor="@color/white"
+                    android:gravity="start"
+                    app:layout_constraintStart_toEndOf="@+id/tvSeaDayTitle"
+                    app:layout_constraintTop_toBottomOf="@+id/tvTextDay"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+                <TextView
+                    android:id="@+id/tvPeipsiDayTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/peipsi"
+                    android:textSize="@dimen/xsmall_text_size"
+                    android:textColor="@color/white"
+                    android:paddingEnd="@dimen/container_padding"
+                    app:layout_constraintBaseline_toBaselineOf="@id/tvPeipsiDay"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvPeipsiDay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/xsmall_text_size"
+                    android:layout_marginTop="@dimen/field_separator_small_margin"
+                    android:layout_marginStart="@dimen/field_separator_margin"
+                    android:paddingStart="@dimen/container_medium_padding"
+                    android:paddingEnd="@dimen/container_medium_padding"
+                    android:textColor="@color/white"
+                    android:gravity="start"
+                    app:layout_constraintStart_toEndOf="@+id/tvPeipsiDayTitle"
+                    app:layout_constraintTop_toBottomOf="@+id/tvSeaDay"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+                <TextView
+                    android:id="@+id/tvPlacesDay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/places"
+                    android:textSize="@dimen/small_text_size"
+                    android:textColor="@color/white"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvPeipsiDay"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvPlacesDay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clipToPadding="false"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvPlacesDay"/>
+
+                <TextView
+                    android:id="@+id/tvWindsDay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/winds"
+                    android:textSize="@dimen/small_text_size"
+                    android:textColor="@color/white"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/rvPlacesDay"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvWindsDay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clipToPadding="false"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvWindsDay"/>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/tvNightTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/night"
+                android:textSize="@dimen/standard_text_size"
+                android:textColor="@color/white"
+                android:visibility="gone"/>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clForecastDetailsNight"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/tvNightPhenomenonTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/phenomenon"
+                    android:textSize="@dimen/xsmall_text_size"
+                    android:textColor="@color/white"
+                    app:layout_constraintBaseline_toBaselineOf="@id/tvNightPhenomenon"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvNightPhenomenon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/xsmall_text_size"
+                    android:layout_marginTop="@dimen/field_separator_small_margin"
+                    android:layout_marginStart="@dimen/field_separator_margin"
+                    android:textColor="@color/white"
+                    app:layout_constraintStart_toEndOf="@+id/tvNightPhenomenonTitle"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvTempMinNightTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tempmin"
+                    android:textSize="@dimen/xsmall_text_size"
+                    android:textColor="@color/white"
+                    app:layout_constraintBaseline_toBaselineOf="@id/tvTempMinNight"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvTempMinNight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/xsmall_text_size"
+                    android:layout_marginTop="@dimen/field_separator_small_margin"
+                    android:layout_marginStart="@dimen/field_separator_margin"
+                    android:textColor="@color/white"
+                    app:layout_constraintStart_toEndOf="@+id/tvTempMinNightTitle"
+                    app:layout_constraintTop_toBottomOf="@+id/tvNightPhenomenon" />
+
+                <TextView
+                    android:id="@+id/tvTempMaxNightTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tempmax"
+                    android:textSize="@dimen/xsmall_text_size"
+                    android:textColor="@color/white"
+                    app:layout_constraintBaseline_toBaselineOf="@id/tvTempMaxNight"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvTempMaxNight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/xsmall_text_size"
+                    android:layout_marginTop="@dimen/field_separator_small_margin"
+                    android:layout_marginStart="@dimen/field_separator_margin"
+                    android:textColor="@color/white"
+                    app:layout_constraintStart_toEndOf="@+id/tvTempMaxNightTitle"
+                    app:layout_constraintTop_toBottomOf="@+id/tvTempMinNight" />
+
+                <TextView
+                    android:id="@+id/tvTextNightTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/text"
+                    android:textSize="@dimen/xsmall_text_size"
+                    android:textColor="@color/white"
+                    android:paddingEnd="@dimen/container_padding"
+                    app:layout_constraintBaseline_toBaselineOf="@id/tvTextNight"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvTextNight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/xsmall_text_size"
+                    android:layout_marginTop="@dimen/field_separator_small_margin"
+                    android:layout_marginStart="@dimen/field_separator_margin"
+                    android:paddingStart="@dimen/container_medium_padding"
+                    android:paddingEnd="@dimen/container_medium_padding"
+                    android:textColor="@color/white"
+                    android:gravity="start"
+                    app:layout_constraintStart_toEndOf="@+id/tvTextNightTitle"
+                    app:layout_constraintTop_toBottomOf="@+id/tvTempMaxNight"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+                <TextView
+                    android:id="@+id/tvSeaNightTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/sea"
+                    android:textSize="@dimen/xsmall_text_size"
+                    android:textColor="@color/white"
+                    android:paddingEnd="@dimen/container_padding"
+                    app:layout_constraintBaseline_toBaselineOf="@id/tvSeaNight"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvSeaNight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/xsmall_text_size"
+                    android:layout_marginTop="@dimen/field_separator_small_margin"
+                    android:layout_marginStart="@dimen/field_separator_margin"
+                    android:paddingStart="@dimen/container_medium_padding"
+                    android:paddingEnd="@dimen/container_medium_padding"
+                    android:textColor="@color/white"
+                    android:gravity="start"
+                    app:layout_constraintStart_toEndOf="@+id/tvSeaNightTitle"
+                    app:layout_constraintTop_toBottomOf="@+id/tvTextNight"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+                <TextView
+                    android:id="@+id/tvPeipsiNightTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/peipsi"
+                    android:textSize="@dimen/xsmall_text_size"
+                    android:textColor="@color/white"
+                    android:paddingEnd="@dimen/container_padding"
+                    app:layout_constraintBaseline_toBaselineOf="@id/tvPeipsiNight"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvPeipsiNight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/xsmall_text_size"
+                    android:layout_marginTop="@dimen/field_separator_small_margin"
+                    android:layout_marginStart="@dimen/field_separator_margin"
+                    android:paddingStart="@dimen/container_medium_padding"
+                    android:paddingEnd="@dimen/container_medium_padding"
+                    android:textColor="@color/white"
+                    android:gravity="start"
+                    app:layout_constraintStart_toEndOf="@+id/tvPeipsiNightTitle"
+                    app:layout_constraintTop_toBottomOf="@+id/tvSeaNight"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+                <TextView
+                    android:id="@+id/tvPlacesNight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/places"
+                    android:textSize="@dimen/small_text_size"
+                    android:textColor="@color/white"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvPeipsiNight"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvPlacesNight"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clipToPadding="false"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvPlacesNight"/>
+
+                <TextView
+                    android:id="@+id/tvWindsNight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/winds"
+                    android:textSize="@dimen/small_text_size"
+                    android:textColor="@color/white"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/rvPlacesNight"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvWindsNight"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clipToPadding="false"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvWindsNight"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

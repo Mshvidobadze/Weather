@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="@dimen/container_medium_padding"
+    android:background="@color/background_color">
+
+    <TextView
+        android:id="@+id/tvPlaceNameTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/name"
+        android:textSize="@dimen/xsmall_text_size"
+        android:textColor="@color/white"
+        app:layout_constraintBaseline_toBaselineOf="@id/tvPlaceName"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tvPlaceName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/xsmall_text_size"
+        android:layout_marginTop="@dimen/field_separator_small_margin"
+        android:layout_marginStart="@dimen/field_separator_margin"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toEndOf="@+id/tvPlaceNameTitle"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvPlacePhenomenonTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/phenomenon"
+        android:textSize="@dimen/xsmall_text_size"
+        android:textColor="@color/white"
+        app:layout_constraintBaseline_toBaselineOf="@id/tvPlacePhenomenon"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tvPlacePhenomenon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/xsmall_text_size"
+        android:layout_marginTop="@dimen/field_separator_small_margin"
+        android:layout_marginStart="@dimen/field_separator_margin"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toEndOf="@+id/tvPlacePhenomenonTitle"
+        app:layout_constraintTop_toBottomOf="@+id/tvPlaceName" />
+
+    <TextView
+        android:id="@+id/tvPlaceTempMinTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tempmin"
+        android:textSize="@dimen/xsmall_text_size"
+        android:textColor="@color/white"
+        app:layout_constraintBaseline_toBaselineOf="@id/tvPlaceTempMin"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tvPlaceTempMin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/xsmall_text_size"
+        android:layout_marginTop="@dimen/field_separator_small_margin"
+        android:layout_marginStart="@dimen/field_separator_margin"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toEndOf="@+id/tvPlaceTempMinTitle"
+        app:layout_constraintTop_toBottomOf="@+id/tvPlacePhenomenon" />
+
+    <TextView
+        android:id="@+id/tvPlaceTempMaxTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tempmax"
+        android:textSize="@dimen/xsmall_text_size"
+        android:textColor="@color/white"
+        app:layout_constraintBaseline_toBaselineOf="@id/tvPlaceTempMax"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tvPlaceTempMax"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/xsmall_text_size"
+        android:layout_marginTop="@dimen/field_separator_small_margin"
+        android:layout_marginStart="@dimen/field_separator_margin"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toEndOf="@+id/tvPlaceTempMaxTitle"
+        app:layout_constraintTop_toBottomOf="@+id/tvPlaceTempMin" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
